@@ -1,0 +1,6 @@
+if __name__ == '__main__':
+    n = int(input())
+    arr =set(list(map(int, input().split())))
+    sorted_array= sorted(arr,reverse=True)
+    second_largest=sorted_array[1]
+    print(second_largest)
