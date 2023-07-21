@@ -1,0 +1,7 @@
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(set(list(map(int, input().split()))))
+    arr.sort()
+    second_score=arr[-2]
+    print(second_score)
+    
