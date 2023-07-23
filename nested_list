@@ -1,0 +1,12 @@
+if __name__ == '__main__':
+    student_data = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        student_data.append([name, score])
+    student_data.sort(key=lambda x: x[1])
+    second_lowest_grade = sorted(set([grade for _, grade in student_data]))[1]
+    students_with_second_lowest_grade = [name for name, grade in student_data if grade == second_lowest_grade]
+    students_with_second_lowest_grade.sort()
+    for student in students_with_second_lowest_grade:
+        print(student)
