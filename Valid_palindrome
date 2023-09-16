@@ -3,4 +3,4 @@ class Solution:
         s= s.lower()
         word = ''.join(letter for letter in s if letter.isalnum())
         return word==word[::-1]
-        print (word)
+        
