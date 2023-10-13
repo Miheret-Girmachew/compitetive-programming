@@ -1,0 +1,14 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        anagram1={}
+        anagram2={}
+        
+        for character in s:
+            anagram1[character]= anagram1.get(character,0)+1
+        for character in t:
+            anagram2[character]= anagram2.get(character,0)+1
+        if anagram1 == anagram2:
+            return True
+        else:
+            return False
+            
