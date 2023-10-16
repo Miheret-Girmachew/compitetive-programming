@@ -2,13 +2,32 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         anagram1={}
         anagram2={}
-        
-        for character in s:
-            anagram1[character]= anagram1.get(character,0)+1
-        for character in t:
-            anagram2[character]= anagram2.get(character,0)+1
+        for char in s:
+            if char in anagram1:
+                anagram1[char]+=1
+            else:
+                anagram1[char]=1
+        for char2 in t:
+            if char2 in anagram2:
+                anagram2[char2]+=1  
+            else:
+                anagram2[char2]=1
         if anagram1 == anagram2:
             return True
         else:
             return False
+            
+                
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       
             
