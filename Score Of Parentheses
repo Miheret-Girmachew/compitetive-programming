@@ -1,0 +1,20 @@
+class Solution:
+    def scoreOfParentheses(self, s: str) -> int:
+        stack=[]
+        output=0
+        score=0
+        for parenthesis in s:
+            if parenthesis== "(":
+                stack.append(0)
+            elif parenthesis == ")":
+                popped= stack.pop()
+                if popped==0:
+                    score = 1
+                else:
+                    score = popped * 2
+                if not stack :
+                    output+= score
+                else:
+                    stack[-1]+=score
+        return output
+                
