@@ -1,0 +1,15 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack=[]
+        valid = { "[":"]", "{": "}", "(":")"}
+        for bracket in s:
+            if bracket in "([{" :
+                stack.append(bracket)
+            elif len(stack)==0 or bracket != valid[stack.pop()]:
+                return False
+        return len(stack)==0
+        
+        
+        
+        
+    
