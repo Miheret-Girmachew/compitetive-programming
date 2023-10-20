@@ -1,0 +1,17 @@
+class Solution:
+    def judgeSquareSum(self, c: int) -> bool:
+        i=0
+        j=int(sqrt(c))
+        while i<=j:
+            if c==((i*i) + (j*j)):
+                return True
+            elif c>((i*i) + (j*j)):
+                i+=1
+            else:
+                j-=1
+        return False
+                
+                
+                
+                
+                        
