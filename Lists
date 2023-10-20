@@ -1,19 +1,22 @@
 if __name__ == '__main__':
-    N= int(input())
-    mlist = []
-    for i in range(N):
-        order = input().split()
-        if order[0] == "print":
+    my_list = []
+    N = int(input())
+    for _ in range(N):
+        command = input().split()
+        if command[0] == "insert":
+            i , e = map(int, command[1:])
+            my_list.insert(i, e)
+        elif command[0] == "print":
             print(my_list)
-        elif order[0] == "insert":
-            my_list.insert(int(order[1]), int(order[2]))
-        elif order[0] == "remove":
-            my_list.remove(int(order[1]))
-        elif order[0] == "append":
-            my_list.append(int(order[1]))
-        elif order[0] == "sort":
+        elif command[0] == "remove":
+            e = int(command[1])
+            my_list.remove(e)
+        elif command[0] == "append":
+            e = int(command[1])
+            my_list.append(e)
+        elif command[0] == "sort":
             my_list.sort()
-        elif order[0] == "pop":
-            my_list.pop(-1)
-        elif order[0] == "reverse":
+        elif command[0] == "pop":
+            my_list.pop()
+        elif command[0] == "reverse":
             my_list.reverse()
