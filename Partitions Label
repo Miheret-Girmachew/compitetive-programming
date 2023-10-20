@@ -1,0 +1,14 @@
+class Solution:
+    def partitionLabels(self, s: str) -> List[int]:
+        hashh = {letter: indexx for indexx, letter in enumerate(s)}
+        maxx=0
+        sizee=0
+        final=[]
+        for indexx, letter in enumerate(s):
+            sizee+=1
+            maxx= max(hashh[letter], maxx)
+            if indexx==maxx:
+                final.append(sizee)
+                sizee=0
+        return(final)
+        
