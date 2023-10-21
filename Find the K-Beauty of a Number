@@ -1,0 +1,16 @@
+class Solution:
+    def divisorSubstrings(self, num: int, k: int) -> int:
+        snum=str(num)
+        subnum=snum[:k]
+        box=[]
+        if num%int(subnum)==0:
+            box.append(subnum)
+        for i in range(1,len(snum)-k+1):
+            subnum=snum[i:k+i]
+            if int(subnum) != 0 and num%int(subnum)==0 :
+                box.append(subnum)
+        length=len(box)
+        return length
+        
+       
+ 
