@@ -1,0 +1,16 @@
+class Solution:
+    def minStartValue(self, nums: List[int]) -> int:
+        summ=[]
+        summm=0
+        for num in nums:
+            summm+=num
+            summ.append(summm)
+        minimum=min(summ)
+        if minimum < 1:
+            output=1-minimum
+            return output
+        else:
+            return 1
+            
+            
+        
