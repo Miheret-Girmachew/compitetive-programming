@@ -1,0 +1,15 @@
+class Solution:
+    def thirdMax(self, nums: List[int]) -> int:
+        nums.sort()
+        nums.reverse()
+        snumm = []
+        for i in range(len(nums)):
+            if nums[i] not in snumm:
+                snumm.append(nums[i])
+            
+        if len(snumm)>=3:
+            return snumm[2]
+        else :
+            return snumm[0]
+        
+        
