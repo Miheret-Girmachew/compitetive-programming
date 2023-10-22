@@ -1,0 +1,17 @@
+class Solution:
+    def leftRightDifference(self, nums: List[int]) -> List[int]:
+        summ1=[0]
+        summ2=[0]
+        diff=0
+        answer=[]
+        for num in nums[:-1]:
+            summ1.append(summ1[-1]+num)
+        for num in nums[::-1][:-1]:
+            summ2.insert(0,summ2[0]+num)
+        for i in range(len(nums)):
+            answer.append(abs(summ1[i]-summ2[i]))
+        return answer
+
+
+
+        
