@@ -1,0 +1,16 @@
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        mset=set()
+        while n != 1:
+            summ=0
+            while n>0:
+                remainder=n%10
+                remainder=remainder**2
+                summ+=remainder
+                n=n//10
+            if summ in mset:
+                return False
+            mset.add(summ)
+            n=summ
+        return True
+        
