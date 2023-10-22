@@ -1,0 +1,18 @@
+class Solution:
+    def pivotInteger(self, n: int) -> int:
+        if n == 1:
+            return 1
+        nums=[]
+        for i in range(1,n+1):
+            nums.append(i)
+        leftsum=nums[0]
+        rightsum=sum(nums)
+        for i in range(1, len(nums)):
+            leftsum+=nums[i]
+            rightsum-=nums[i-1]
+            if leftsum==rightsum:
+                return nums[i]
+        return -1
+
+
+        
