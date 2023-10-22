@@ -1,0 +1,15 @@
+class Solution:
+    def answerQueries(self, nums: List[int], queries: List[int]) -> List[int]:
+        nums.sort()
+        summ=[]
+        numm=0
+        answer=[0]*len(queries)
+        for num in nums:
+            numm+=num
+            summ.append(numm)
+        for i in range(len(queries)):
+            j=0
+            while j<len(summ) and summ[j]<=queries[i]:
+                    j+=1
+            answer[i]=j
+        return answer
