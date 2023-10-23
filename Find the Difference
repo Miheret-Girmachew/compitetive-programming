@@ -1,0 +1,17 @@
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        hasht={}
+        hashs={}
+        for i in s:
+            if i not in hashs:
+                hashs[i]=0
+            else:
+                hashs[i]+=1
+        for i in t:
+            if i not in hasht:
+                hasht[i]=0
+            else:
+                hasht[i]+=1 
+        for i in hasht:
+            if i not in hashs or hasht[i] > hashs[i]:
+                return i     
