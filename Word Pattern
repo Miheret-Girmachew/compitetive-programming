@@ -1,0 +1,18 @@
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        hashh={}
+        llist=s.split()
+        if len(llist)!=len(pattern):
+            return False
+        if len(set(llist))!=len(set(pattern)):
+            return False
+        for i in range(len(pattern)):
+            if pattern[i] not in hashh:
+                hashh[pattern[i]]=llist[i]
+            elif  hashh[pattern[i]]==llist[i]:
+                continue
+            else:
+                return False
+        return True
+
+        
