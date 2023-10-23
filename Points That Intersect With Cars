@@ -1,0 +1,10 @@
+class Solution:
+    def numberOfPoints(self, nums: List[List[int]]) -> int:
+        sset=set()
+        for start, end in nums:
+            for i in range(start, end+1):
+                sset.add(i)
+        return len(sset)
+        
+
+
