@@ -1,0 +1,15 @@
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        hash1={}
+        for i in s:
+            if i not in hash1:
+                hash1[i]=0
+            elif i in hash1:
+                hash1[i]+=1
+        for j , i in enumerate(s):
+            if hash1[i]==0:
+                return j
+        return -1
+       
+           
+      
