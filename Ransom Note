@@ -1,0 +1,14 @@
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        hash1={}
+        for s in magazine:
+            if s not in hash1:
+                hash1[s]=1
+            else:
+                hash1[s]+=1
+        for s in ransomNote:
+            if s in hash1 and hash1[s]>0:
+                hash1[s]-=1
+            else: 
+                return False
+        return True
