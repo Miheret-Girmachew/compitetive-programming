@@ -1,0 +1,15 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        hash1={}
+        hash2={}
+        if len(s)!=len(t):
+            return False
+        for i in range(len(s)):
+            if s[i] not in hash1 and t[i] not in hash2:
+                hash1[s[i]]=t[i]
+                hash2[t[i]]=s[i]
+            elif s[i] in hash1 and hash1[s[i]]==t[i]:
+                continue
+            else:
+                return False
+        return True
