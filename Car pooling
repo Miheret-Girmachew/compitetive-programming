@@ -1,0 +1,14 @@
+class Solution:
+    def carPooling(self, trips: List[List[int]], capacity: int) -> bool:
+        station=[0]*1001
+        total=0
+
+        for trip in trips:
+            station[trip[1]]+=trip[0]
+            station[trip[2]]-=trip[0]
+
+        for people in station:
+            total+=people
+            if total>capacity:
+                return False
+        return True
