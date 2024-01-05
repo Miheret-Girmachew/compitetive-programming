@@ -1,4 +1,4 @@
-class Solution:
+"""class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
         hashh={}
         ans = []
@@ -12,7 +12,7 @@ class Solution:
         keyy.sort()
         for i in range(k):
             ans.extend(hashh[keyy[i]])
-        return ans
+        return ans"""
 class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
         nums=[]
