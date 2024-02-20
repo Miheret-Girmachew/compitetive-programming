@@ -6,6 +6,7 @@
 
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
+       
         tempA = headA
         countA = 0
         while tempA:
@@ -31,6 +32,7 @@ class Solution:
             headA = headA.next
             headB = headB.next
         return None
+
     
         
 
