@@ -7,5 +7,3 @@ for i in range(nn):
     val = int(input())
     j = bisect_right(nums, val)
     print(j)
-
-
