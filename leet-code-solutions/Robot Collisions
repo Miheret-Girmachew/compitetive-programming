@@ -1,0 +1,18 @@
+class Solution:
+    def survivedRobotsHealths(self, positions: List[int], healths: List[int], directions: str) -> List[int]:
+        s=[]
+        for i in sorted(range(len(positions)), key = lambda i: positions[i]):
+            if directions[i] =='R':
+                s.append(i)
+            else:
+                while s and healths[s[-1]] < healths[i]:
+                    healths[i] -= 1
+                    healths[s.pop()] = 0
+                if s:
+                    if healths[s[-1]] == healths[i]:
+                        healths[s.pop()] = 0
+                    else:
+                        healths[s[-1]] -= 1
+                    healths[i] = 0
+        return [hi for hi in healths if hi]   
+        
